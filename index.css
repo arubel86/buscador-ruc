@@ -220,7 +220,7 @@ body {
   font-size: 1.1rem;
   color: var(--gray-600);
   max-width: 680px;
-  margin: 0 auto 32px auto;
+  margin: 0 auto 44px auto;
 }
 
 /* ── FORMULARIO DESGLOSADO DGI e-TAX 2 ──────────────────── */
@@ -1065,7 +1065,7 @@ footer {
 
   .hero-description {
     font-size: 0.98rem;
-    margin-bottom: 20px;
+    margin-bottom: 34px !important;
   }
 
   .dgi-form-card {
@@ -1123,7 +1123,7 @@ footer {
   .hero-description {
     font-size: 0.9rem;
     line-height: 1.45;
-    margin-bottom: 20px;
+    margin-bottom: 32px !important;
   }
 
   .dgi-form-card {
