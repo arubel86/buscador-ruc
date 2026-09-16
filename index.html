@@ -13,7 +13,7 @@
   
   <!-- Lucide Icons & CSS -->
   <script src="https://unpkg.com/lucide@latest"></script>
-  <link rel="stylesheet" href="index.css?v=3.2">
+  <link rel="stylesheet" href="index.css?v=3.3">
   <link rel="icon" type="image/svg+xml" href="assets/LOGOS PARA DIGITAL INDIVIDUALES-13.svg">
 </head>
 <body>
@@ -22,7 +22,7 @@
   <header class="navbar">
     <div class="navbar-container">
       <a href="#" class="brand-logo">
-        <img src="assets/LOGOS PARA DIGITAL INDIVIDUALES-07.svg?v=3.2" alt="Aizprua S.E. Logo" onerror="this.src='assets/LOGOS PARA DIGITAL INDIVIDUALES-21-nobg.svg'">
+        <img src="assets/LOGOS PARA DIGITAL INDIVIDUALES-07.svg?v=3.3" alt="Aizprua S.E. Logo" onerror="this.src='assets/LOGOS PARA DIGITAL INDIVIDUALES-21-nobg.svg'">
       </a>
 
       <ul class="nav-links">
@@ -62,7 +62,7 @@
       <div class="dgi-form-grid">
         <!-- Campo: Tipo de Contribuyente -->
         <div class="form-group-full">
-          <label class="form-label">Tipo de Contribuyente (*)</label>
+          <label class="form-label">Tipo de Contribuyente <span class="required-star">*</span></label>
           <select id="dgiTipoSelect" class="form-select" onchange="onDgiTipoChange()">
             <option value="JURIDICA" selected>JURIDICA (Persona Jurídica / Empresa)</option>
             <option value="NATURAL">NATURAL (Persona Natural / Cédula)</option>
@@ -73,15 +73,15 @@
         <!-- Campos para JURIDICA (Rollo/Tomo, Folio/Imagen, Asiento/Ficha) -->
         <div id="groupJuridica" class="form-fields-row">
           <div class="form-group flex-1">
-            <label class="form-label">Rollo / Tomo (*)</label>
+            <label class="form-label">Rollo / Tomo <span class="required-star">*</span></label>
             <input type="text" id="juridicaTomo" class="form-control" placeholder="Ej: 1556843" value="1556843" oninput="actualizarRucConstruido()">
           </div>
           <div class="form-group flex-1">
-            <label class="form-label">Folio / Imagen (*)</label>
+            <label class="form-label">Folio / Imagen <span class="required-star">*</span></label>
             <input type="text" id="juridicaFolio" class="form-control" placeholder="Ej: 2" value="2" oninput="actualizarRucConstruido()">
           </div>
           <div class="form-group flex-1">
-            <label class="form-label">Asiento / Ficha (*)</label>
+            <label class="form-label">Asiento / Ficha <span class="required-star">*</span></label>
             <input type="text" id="juridicaAsiento" class="form-control" placeholder="Ej: 543210" value="543210" oninput="actualizarRucConstruido()">
           </div>
         </div>
@@ -89,7 +89,7 @@
         <!-- Campos para NATURAL (Provincia, Folio/Imagen, Asiento/Ficha) -->
         <div id="groupNatural" class="form-fields-row" style="display:none;">
           <div class="form-group" style="width: 140px;">
-            <label class="form-label">Provincia (*)</label>
+            <label class="form-label">Provincia <span class="required-star">*</span></label>
             <select id="naturalProvincia" class="form-select" onchange="actualizarRucConstruido()">
               <option value="1">1 (Bocas)</option>
               <option value="2">2 (Coclé)</option>
@@ -109,11 +109,11 @@
             </select>
           </div>
           <div class="form-group flex-1">
-            <label class="form-label">Folio / Tomo (*)</label>
+            <label class="form-label">Folio / Tomo <span class="required-star">*</span></label>
             <input type="text" id="naturalFolio" class="form-control" placeholder="Ej: 825" oninput="actualizarRucConstruido()">
           </div>
           <div class="form-group flex-1">
-            <label class="form-label">Asiento / Ficha (*)</label>
+            <label class="form-label">Asiento / Ficha <span class="required-star">*</span></label>
             <input type="text" id="naturalAsiento" class="form-control" placeholder="Ej: 886" oninput="actualizarRucConstruido()">
           </div>
         </div>
@@ -121,7 +121,7 @@
         <!-- Campos para NATURAL NT -->
         <div id="groupNaturalNt" class="form-fields-row" style="display:none;">
           <div class="form-group flex-1">
-            <label class="form-label">Número de RUC / NT (*)</label>
+            <label class="form-label">Número de RUC / NT <span class="required-star">*</span></label>
             <input type="text" id="naturalNtRuc" class="form-control" placeholder="Ej: 8-NT-2-123456" oninput="actualizarRucConstruido()">
           </div>
         </div>
