@@ -1232,65 +1232,174 @@ body {
   opacity: 1;
 }
 
-/* ── FOOTER ───────────────────────────────────────────────── */
+/* ── FOOTER INSTITUCIONAL AIZPRUA S.E. ─────────────────────── */
 footer {
   margin-top: auto;
-  background: var(--gray-900);
+  background: #0b1120;
   color: var(--gray-400);
-  padding: 48px 24px 24px 24px;
+  padding: 56px 24px 28px 24px;
   font-size: 0.9rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .footer-container {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 auto 40px auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 32px;
-  margin-bottom: 40px;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 40px;
+}
+
+.footer-brand-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.footer-logo {
+  height: 34px;
+  width: auto;
+  object-fit: contain;
 }
 
 .footer-brand h4 {
   color: white;
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin-bottom: 12px;
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.footer-brand-desc {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  margin-bottom: 18px;
+  max-width: 380px;
+}
+
+.footer-contact-pills {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #cbd5e1;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.footer-pill i {
+  width: 14px;
+  height: 14px;
+  color: var(--brand-orange);
+}
+
+.footer-pill-active:hover {
+  background: rgba(56, 73, 200, 0.25);
+  border-color: rgba(56, 73, 200, 0.5);
+  color: #ffffff;
+  transform: translateY(-1px);
 }
 
 .footer-links h5 {
   color: white;
-  font-size: 0.95rem;
-  margin-bottom: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .footer-links ul {
   list-style: none;
-}
-
-.footer-links li {
-  margin-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .footer-links a {
-  color: var(--gray-400);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #94a3b8;
   text-decoration: none;
-  transition: color 0.2s;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.footer-links a i {
+  width: 15px;
+  height: 15px;
+  color: var(--gray-400);
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .footer-links a:hover {
   color: white;
+  transform: translateX(3px);
+}
+
+.footer-links a:hover i {
+  color: var(--brand-blue-light);
 }
 
 .footer-bottom {
   max-width: 1200px;
   margin: 0 auto;
   padding-top: 24px;
-  border-top: 1px solid var(--gray-800);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
+}
+
+.footer-copy {
+  font-size: 0.85rem;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+.footer-status-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  color: #34d399;
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  background: #10b981;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #10b981;
+  animation: pulseDot 2s infinite;
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
 }
 
 /* ── SISTEMA DE DISEÑO RESPONSIVE Y ADAPTACIÓN MÓVIL ─────── */
@@ -1579,20 +1688,51 @@ footer {
     gap: 12px;
   }
 
-  /* Footer */
+  /* Footer Adaptativo Móvil */
   footer {
-    padding: 36px 16px 20px 16px;
+    padding: 40px 16px 24px 16px;
   }
 
   .footer-container {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 28px;
+    margin-bottom: 32px;
+  }
+
+  .footer-links {
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .footer-links a {
+    padding: 5px 0;
+    font-size: 0.92rem;
+  }
+
+  .footer-contact-pills {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-pill {
+    width: 100%;
+    justify-content: flex-start;
   }
 
   .footer-bottom {
     flex-direction: column;
     text-align: center;
-    gap: 10px;
+    gap: 14px;
+    align-items: center;
+  }
+
+  .footer-copy {
+    text-align: center;
+    font-size: 0.8rem;
+  }
+
+  .footer-status-tag {
+    font-size: 0.75rem;
   }
 }
 
