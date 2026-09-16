@@ -13,7 +13,7 @@
   
   <!-- Lucide Icons & CSS -->
   <script src="https://unpkg.com/lucide@latest"></script>
-  <link rel="stylesheet" href="index.css?v=3.4">
+  <link rel="stylesheet" href="index.css?v=3.5">
   <link rel="icon" type="image/svg+xml" href="assets/LOGOS PARA DIGITAL INDIVIDUALES-13.svg">
 </head>
 <body>
@@ -22,7 +22,7 @@
   <header class="navbar">
     <div class="navbar-container">
       <a href="#" class="brand-logo">
-        <img src="assets/LOGOS PARA DIGITAL INDIVIDUALES-07.svg?v=3.4" alt="Aizprua S.E. Logo" onerror="this.src='assets/LOGOS PARA DIGITAL INDIVIDUALES-21-nobg.svg'">
+        <img src="assets/LOGOS PARA DIGITAL INDIVIDUALES-07.svg?v=3.5" alt="Aizprua S.E. Logo" onerror="this.src='assets/LOGOS PARA DIGITAL INDIVIDUALES-21-nobg.svg'">
       </a>
 
       <ul class="nav-links">
@@ -56,7 +56,7 @@
     <div class="dgi-form-card" id="dgiFormCard">
       <div class="dgi-form-header">
         <i data-lucide="file-search" style="width: 20px; height: 20px; color: var(--brand-blue);"></i>
-        <span>Formulario de Consulta Oficial DGI e-Tax 2</span>
+        <span>Formulario de Consulta Oficial DGI e-Tax 2.0</span>
       </div>
 
       <div class="dgi-form-grid">
@@ -64,8 +64,8 @@
         <div class="form-group-full">
           <label class="form-label">Tipo de Contribuyente <span class="required-star">*</span></label>
           <select id="dgiTipoSelect" class="form-select" onchange="onDgiTipoChange()">
-            <option value="JURIDICA" selected>JURIDICA (Persona Jurídica / Empresa)</option>
-            <option value="NATURAL">NATURAL (Persona Natural / Cédula)</option>
+            <option value="JURIDICA" selected>JURÍDICA (Persona Jurídica / Empresa)</option>
+            <option value="NATURAL">NATURAL (Persona Natural / CÉDULA)</option>
             <option value="NATURAL_NT">NATURAL NT (Persona Natural Extranjero NT)</option>
           </select>
         </div>
@@ -130,7 +130,7 @@
       <!-- Barra de Acción e Indicador RUC Compuesto DGI -->
       <div class="dgi-action-bar">
         <div class="constructed-ruc-preview">
-          <span class="preview-label">Cédula / RUC / NT:</span>
+          <span class="preview-label">CÉDULA / RUC / NT:</span>
           <strong id="constructedRucValue" class="preview-val">1556843-2-543210</strong>
         </div>
         <button class="btn-search-dgi" onclick="ejecutarBusquedaDesglosadaDgi()">

@@ -228,7 +228,7 @@ async function ejecutarBusqueda(queryText) {
           <div class="spinner-ring-inner"></div>
           <div class="spinner-center-glow"></div>
         </div>
-        <h3 id="loadingStepTitle" class="loading-step-title">Conectando con los servidores del e-Tax 2 DGI Panamá...</h3>
+        <h3 id="loadingStepTitle" class="loading-step-title">Conectando con los servidores del e-Tax 2.0 DGI Panamá...</h3>
         <p id="loadingStepSubtitle" class="loading-step-subtitle" style="margin-bottom:0;">Verificando RUC o Cédula (${escapeHtml(labelTipo)}) en vivo...</p>
       </div>
     `;
