@@ -444,7 +444,7 @@ function mostrarResultado(data) {
           <button class="btn-action btn-copy-dv" onclick="copiarDv()">
             <i data-lucide="hash"></i> Copiar Sólo DV
           </button>
-          <button class="btn-action" onclick="abrirModalPazYSalvo()" style="background: #eef2ff; color: #3849C8; border: 1px solid rgba(56, 73, 200, 0.3);">
+          <button class="btn-action btn-secondary-brand" onclick="abrirModalPazYSalvo()">
             <i data-lucide="shield-check"></i> Verificar Certificado de Paz y Salvo
           </button>
         </div>
@@ -469,13 +469,13 @@ function mostrarErrorNoEncontrado(query, mensajeOriginal) {
   const safeMsg = mensajeOriginal ? escapeHtml(mensajeOriginal) : `No existe un registro fiscal activo o verificado en la DGI para la consulta: <strong>"${safeQuery}"</strong>.`;
 
   resultContainer.innerHTML = `
-    <div style="background: #FFF5F5; border: 1.5px solid #FEB2B2; padding: 24px; border-radius: 16px; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
-      <div style="width: 48px; height: 48px; background: #FED7D7; color: #C53030; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px auto; font-size: 24px; font-weight: bold;">✕</div>
-      <h3 style="color: #9B2C2C; font-size: 1.2rem; margin-bottom: 8px; font-weight: 700;">Contribuyente no Encontrado en la DGI</h3>
-      <p style="color: #742A2A; font-size: 0.95rem; max-width: 500px; margin: 0 auto 16px auto; line-height: 1.5;">
+    <div class="error-card">
+      <div class="error-icon-box">✕</div>
+      <h3 class="error-title">Contribuyente no Encontrado en la DGI</h3>
+      <p class="error-desc">
         ${safeMsg}
       </p>
-      <div style="font-size: 0.85rem; color: #9B2C2C; background: #FFF; padding: 10px 16px; border-radius: 8px; display: inline-block; border: 1px solid #FEB2B2;">
+      <div class="error-tip">
         💡 Verifica que el RUC o Cédula esté escrito correctamente (ej: 8-825-886 o 1556843-2-543210).
       </div>
     </div>
@@ -612,23 +612,15 @@ function mostrarToast(mensaje) {
   if (!toast) {
     toast = document.createElement("div");
     toast.id = "toastNotification";
-    toast.style.cssText = `
-      position: fixed; bottom: 24px; right: 24px; z-index: 9999;
-      background: #1e293b; color: #fff; padding: 12px 24px;
-      border-radius: 8px; font-size: 14px; font-weight: 500;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2); transition: all 0.3s ease;
-      transform: translateY(100px); opacity: 0;
-    `;
+    toast.className = "toast";
     document.body.appendChild(toast);
   }
 
   toast.textContent = mensaje;
-  toast.style.transform = "translateY(0)";
-  toast.style.opacity = "1";
+  toast.classList.add("show");
 
   setTimeout(() => {
-    toast.style.transform = "translateY(100px)";
-    toast.style.opacity = "0";
+    toast.classList.remove("show");
   }, 3500);
 }
 
