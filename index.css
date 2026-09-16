@@ -226,7 +226,7 @@ body {
 /* ── FORMULARIO DESGLOSADO DGI e-TAX 2 ──────────────────── */
 .dgi-form-card {
   max-width: 760px;
-  margin: 0 auto 24px auto;
+  margin: 0 auto 16px auto;
   background: white;
   border-radius: var(--radius-lg);
   border: 1.5px solid var(--gray-200);
@@ -1070,7 +1070,7 @@ footer {
 
   .dgi-form-card {
     padding: 20px 16px;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
   }
 
   .lead-section {
@@ -1128,6 +1128,7 @@ footer {
 
   .dgi-form-card {
     padding: 16px 14px !important;
+    margin-bottom: 16px !important;
   }
 
   .dgi-form-header {
