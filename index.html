@@ -13,7 +13,7 @@
   
   <!-- Lucide Icons & CSS -->
   <script src="https://unpkg.com/lucide@latest"></script>
-  <link rel="stylesheet" href="index.css?v=3.7">
+  <link rel="stylesheet" href="index.css?v=4.0">
   <link rel="icon" type="image/svg+xml" href="assets/LOGOS PARA DIGITAL INDIVIDUALES-13.svg">
 </head>
 <body>
@@ -31,9 +31,9 @@
         <li><a href="#conector" class="nav-link">Conector Sage 50</a></li>
       </ul>
 
-      <a href="https://wa.me/50765461527?text=Hola,%20quisiera%20consultar%20sobre%20sus%20servicios%20de%20asesor%C3%ADa%20y%20facturaci%C3%B3n" target="_blank" class="btn-contact">
+      <a href="https://wa.me/50765461527?text=Hola,%20quisiera%20consultar%20sobre%20sus%20servicios%20de%20asesor%C3%ADa%20y%20facturaci%C3%B3n" target="_blank" class="btn-contact" title="Consultar Especialista en WhatsApp">
         <i data-lucide="message-square"></i>
-        <span>Consultar Especialista</span>
+        <span class="btn-contact-text">Consultar Especialista</span>
       </a>
     </div>
   </header>
@@ -130,7 +130,7 @@
 
         <!-- Campos para NATURAL (Provincia, Folio/Imagen, Asiento/Ficha) -->
         <div id="groupNatural" class="form-fields-row" style="display:none;">
-          <div class="form-group" style="width: 140px;">
+          <div class="form-group form-group-provincia">
             <label class="form-label">Provincia <span class="required-star">*</span></label>
             <select id="naturalProvincia" class="form-select" onchange="actualizarRucConstruido()">
               <option value="1">1 (Bocas)</option>
@@ -315,6 +315,6 @@
   </div>
 
   <!-- Script JS -->
-  <script src="script.js?v=3.7"></script>
+  <script src="script.js?v=4.0"></script>
 </body>
 </html>

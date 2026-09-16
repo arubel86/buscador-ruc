@@ -613,11 +613,12 @@ function mostrarToast(mensaje) {
     toast = document.createElement("div");
     toast.id = "toastNotification";
     toast.style.cssText = `
-      position: fixed; bottom: 24px; right: 24px; z-index: 9999;
-      background: #1e293b; color: #fff; padding: 12px 24px;
-      border-radius: 8px; font-size: 14px; font-weight: 500;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2); transition: all 0.3s ease;
-      transform: translateY(100px); opacity: 0;
+      position: fixed; bottom: 20px; left: 16px; right: 16px; margin: 0 auto;
+      max-width: 420px; width: fit-content; z-index: 9999;
+      background: #1e293b; color: #fff; padding: 12px 20px;
+      border-radius: 10px; font-size: 14px; font-weight: 500; text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25); transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      transform: translateY(80px); opacity: 0; pointer-events: none;
     `;
     document.body.appendChild(toast);
   }
@@ -627,7 +628,7 @@ function mostrarToast(mensaje) {
   toast.style.opacity = "1";
 
   setTimeout(() => {
-    toast.style.transform = "translateY(100px)";
+    toast.style.transform = "translateY(80px)";
     toast.style.opacity = "0";
   }, 3500);
 }
