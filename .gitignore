@@ -1,0 +1,14 @@
+# Dependencias y variables de entorno sensibles
+node_modules/
+.env
+.env.*
+!.env.example
+
+# Logs y archivos temporales
+*.log
+npm-debug.log*
+
+# Scripts de inspección y tests locales
+test_*.js
+inspect_*.js
+get_wsdl.js

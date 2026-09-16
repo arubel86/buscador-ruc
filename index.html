@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Validador RUC & DV Panamá | Aizprua S.E. - Consulta Fiscal Instantánea</title>
+  <meta name="description" content="Consulta y valida gratis el RUC y Dígito Verificador (DV) de empresas y personas en Panamá ante la DGI. Servicio rápido de Aizprua S.E.">
+  
+  <!-- Preconnect & Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons & CSS -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="index.css">
+  <link rel="icon" type="image/svg+xml" href="assets/LOGOS PARA DIGITAL INDIVIDUALES-13.svg">
+</head>
+<body>
+
+  <!-- ── NAVBAR INSTITUCIONAL ───────────────────────────────── -->
+  <header class="navbar">
+    <div class="navbar-container">
+      <a href="#" class="brand-logo">
+        <img src="assets/LOGOS PARA DIGITAL INDIVIDUALES-07.svg" alt="Aizprua S.E. Logo" onerror="this.src='assets/LOGOS PARA DIGITAL INDIVIDUALES-21-nobg.svg'">
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#buscador" class="nav-link">Buscador</a></li>
+        <li><a href="#servicios" class="nav-link">Escudo Preventivo</a></li>
+        <li><a href="#conector" class="nav-link">Conector Sage 50</a></li>
+      </ul>
+
+      <a href="https://wa.me/50765461527?text=Hola,%20quisiera%20consultar%20sobre%20sus%20servicios%20de%20asesor%C3%ADa%20y%20facturaci%C3%B3n" target="_blank" class="btn-contact">
+        <i data-lucide="message-square"></i>
+        <span>Consultar Especialista</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- ── HERO SECTION & BUSCADOR INTELIGENTE ────────────────── -->
+  <section class="hero-section" id="buscador">
+    <div class="hero-badge">
+      <i data-lucide="shield-check" style="width: 16px; height: 16px;"></i>
+      <span>Servicio Oficial de Verificación Fiscal</span>
+    </div>
+
+    <h1 class="hero-title">
+      Consulte su <span class="gradient-text">RUC & Dígito Verificador (DV)</span> al Instante en Panamá
+    </h1>
+    <p class="hero-description">
+      Obtén la Razón Social y el DV oficial ante la DGI para facturación electrónica, transferencias ACH y creación de proveedores sin demora.
+    </p>
+
+    <!-- Formulario Desglosado Oficial DGI Panamá -->
+    <div class="dgi-form-card" id="dgiFormCard">
+      <div class="dgi-form-header">
+        <i data-lucide="file-search" style="width: 20px; height: 20px; color: var(--brand-blue);"></i>
+        <span>Formulario de Consulta Oficial DGI e-Tax 2</span>
+      </div>
+
+      <div class="dgi-form-grid">
+        <!-- Campo: Tipo de Contribuyente -->
+        <div class="form-group-full">
+          <label class="form-label">Tipo de Contribuyente (*)</label>
+          <select id="dgiTipoSelect" class="form-select" onchange="onDgiTipoChange()">
+            <option value="JURIDICA" selected>JURIDICA (Persona Jurídica / Empresa)</option>
+            <option value="NATURAL">NATURAL (Persona Natural / Cédula)</option>
+            <option value="NATURAL_NT">NATURAL NT (Persona Natural Extranjero NT)</option>
+          </select>
+        </div>
+
+        <!-- Campos para JURIDICA (Rollo/Tomo, Folio/Imagen, Asiento/Ficha) -->
+        <div id="groupJuridica" class="form-fields-row">
+          <div class="form-group flex-1">
+            <label class="form-label">Rollo / Tomo (*)</label>
+            <input type="text" id="juridicaTomo" class="form-control" placeholder="Ej: 1556843" value="1556843" oninput="actualizarRucConstruido()">
+          </div>
+          <div class="form-group flex-1">
+            <label class="form-label">Folio / Imagen (*)</label>
+            <input type="text" id="juridicaFolio" class="form-control" placeholder="Ej: 2" value="2" oninput="actualizarRucConstruido()">
+          </div>
+          <div class="form-group flex-1">
+            <label class="form-label">Asiento / Ficha (*)</label>
+            <input type="text" id="juridicaAsiento" class="form-control" placeholder="Ej: 543210" value="543210" oninput="actualizarRucConstruido()">
+          </div>
+        </div>
+
+        <!-- Campos para NATURAL (Provincia, Folio/Imagen, Asiento/Ficha) -->
+        <div id="groupNatural" class="form-fields-row" style="display:none;">
+          <div class="form-group" style="width: 140px;">
+            <label class="form-label">Provincia (*)</label>
+            <select id="naturalProvincia" class="form-select" onchange="actualizarRucConstruido()">
+              <option value="1">1 (Bocas)</option>
+              <option value="2">2 (Coclé)</option>
+              <option value="3">3 (Colón)</option>
+              <option value="4">4 (Chiriquí)</option>
+              <option value="5">5 (Darién)</option>
+              <option value="6">6 (Herrera)</option>
+              <option value="7">7 (Los Santos)</option>
+              <option value="8" selected>8 (Panamá)</option>
+              <option value="9">9 (Veraguas)</option>
+              <option value="10">10 (Guna Yala)</option>
+              <option value="11">11 (Emberá)</option>
+              <option value="12">12 (Ngäbe)</option>
+              <option value="13">13 (Panamá O.)</option>
+              <option value="E">E (Extranjero)</option>
+              <option value="N">N (Nacionalizado)</option>
+            </select>
+          </div>
+          <div class="form-group flex-1">
+            <label class="form-label">Folio / Tomo (*)</label>
+            <input type="text" id="naturalFolio" class="form-control" placeholder="Ej: 825" oninput="actualizarRucConstruido()">
+          </div>
+          <div class="form-group flex-1">
+            <label class="form-label">Asiento / Ficha (*)</label>
+            <input type="text" id="naturalAsiento" class="form-control" placeholder="Ej: 886" oninput="actualizarRucConstruido()">
+          </div>
+        </div>
+
+        <!-- Campos para NATURAL NT -->
+        <div id="groupNaturalNt" class="form-fields-row" style="display:none;">
+          <div class="form-group flex-1">
+            <label class="form-label">Número de RUC / NT (*)</label>
+            <input type="text" id="naturalNtRuc" class="form-control" placeholder="Ej: 8-NT-2-123456" oninput="actualizarRucConstruido()">
+          </div>
+        </div>
+      </div>
+
+      <!-- Barra de Acción e Indicador RUC Compuesto DGI -->
+      <div class="dgi-action-bar">
+        <div class="constructed-ruc-preview">
+          <span class="preview-label">Cédula / RUC / NT:</span>
+          <strong id="constructedRucValue" class="preview-val">1556843-2-543210</strong>
+        </div>
+        <button class="btn-search-dgi" onclick="ejecutarBusquedaDesglosadaDgi()">
+          <i data-lucide="search" style="width: 18px; height: 18px;"></i>
+          <span>Consultar en DGI</span>
+        </button>
+      </div>
+    </div>
+
+    </div>
+  </section>
+
+  <!-- ── TARJETA DE RESULTADO DE BÚSQUEDA (DINÁMICA) ────────── -->
+  <div class="result-container" id="resultContainer"></div>
+
+  <!-- ── HISTORIAL DE CONSULTAS RECIENTES ───────────────────── -->
+  <section class="recent-section">
+    <div class="recent-header-row">
+      <div class="recent-title">
+        <i data-lucide="history" style="width: 18px; height: 18px; color: var(--brand-blue);"></i> Consultas Recientes
+      </div>
+      <button id="btnClearAllRecent" class="btn-clear-history" onclick="limpiarHistorialCompleto()" style="display:none;" title="Borrar todo el historial">
+        <i data-lucide="trash-2" style="width: 14px; height: 14px;"></i> Borrar todo
+      </button>
+    </div>
+    <div class="recent-list" id="recentList"></div>
+  </section>
+
+  <!-- ── LEAD MAGNET BANNERS & SERVICIOS AIZPRUA S.E. ───────── -->
+  <section class="lead-section" id="servicios">
+    <h2 class="section-title">Soluciones para tu Empresa en Panamá</h2>
+    
+    <div class="banners-grid">
+      <!-- Banner Escudo Preventivo -->
+      <div class="banner-card banner-escudo">
+        <div>
+          <span class="banner-tag"><i data-lucide="shield" style="width:14px; height:14px;"></i> Aizprua S.E. Legal</span>
+          <h3 class="banner-heading">Diagnóstico Escudo Preventivo Anti-Multas</h3>
+          <p class="banner-text">
+            ¿Sabías que la DGI aplica multas silenciosas por inconsistencias en reportes? En 40 minutos revisamos el estado fiscal y legal de tu empresa en Panamá.
+          </p>
+        </div>
+        <a href="https://wa.me/50765461527?text=Hola,%20deseo%20solicitar%20un%20Diagn%C3%B3stico%20Escudo%20Preventivo" target="_blank" class="banner-btn">
+          <span>Solicitar Diagnóstico (40 min)</span>
+          <i data-lucide="arrow-right" style="width:18px; height:18px;"></i>
+        </a>
+      </div>
+
+      <!-- Banner Conector Sage 50 -->
+      <div class="banner-card banner-sage" id="conector">
+        <div>
+          <span class="banner-tag"><i data-lucide="cpu" style="width:14px; height:14px;"></i> Conexión F&P</span>
+          <h3 class="banner-heading">Conector Autónomo HKA → Sage 50 2018</h3>
+          <p class="banner-text">
+            Sincroniza automáticamente tus facturas electrónicas emitidas y recibidas en tiempo real con tu contabilidad en Sage 50 Premium sin digitar a mano.
+          </p>
+        </div>
+        <a href="https://wa.me/50765461527?text=Hola,%20me%20interesa%20el%20Conector%20de%20Sage%2050%20con%20The%20Factory%20HKA" target="_blank" class="banner-btn">
+          <span>Ver Demostración Sage 50</span>
+          <i data-lucide="arrow-right" style="width:18px; height:18px;"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER INSTITUCIONAL AIZPRUA S.E. ─────────────────── -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h4>Aizprua S.E.</h4>
+        <p>Servicios Especializados de Asesoría Legal, Fiscal y Soluciones Tecnológicas en Panamá.</p>
+        <p style="margin-top: 12px; font-weight: 600; color: white;">📍 Panamá Oeste | 📱 +507 6546-1527</p>
+      </div>
+
+      <div class="footer-links">
+        <h5>Servicios</h5>
+        <ul>
+          <li><a href="#servicios">Diagnóstico Escudo Preventivo</a></li>
+          <li><a href="#conector">Conector Sage 50 2018</a></li>
+          <li><a href="#buscador">Validador de RUC & DV</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h5>Contacto & Soporte</h5>
+        <ul>
+          <li><a href="mailto:info@aizprua.com">info@aizprua.com</a></li>
+          <li><a href="https://wa.me/50765461527" target="_blank">WhatsApp Directo: +507 6546-1527</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Aizprua S.E. Todos los derechos reservados. Las marcas mencionadas pertenecen a sus respectivos propietarios.</p>
+      <p style="font-size: 0.8rem; color: var(--gray-400);">Conexión DGI Panamá vía HKA API</p>
+    </div>
+  </footer>
+
+  <!-- ── MODAL DE VERIFICACIÓN DE PAZ Y SALVO ───────────────── -->
+  <div class="modal-overlay" id="pazYSalvoModal" onclick="if(event.target === this) cerrarModalPazYSalvo()">
+    <div class="modal-card">
+      <button class="modal-close" onclick="cerrarModalPazYSalvo()">&times;</button>
+      
+      <div class="modal-header">
+        <div class="modal-badge"><i data-lucide="shield-check" style="width:14px; height:14px;"></i> DGI Panamá</div>
+        <h3 class="modal-title">Verificación de Certificación de Paz y Salvo</h3>
+        <p class="modal-desc">Ingresa los 4 datos del certificado impreso para validar su autenticidad y fecha de vigencia.</p>
+      </div>
+
+      <form id="pazYSalvoForm" onsubmit="validarCertificadoPazYSalvo(event)">
+        <div class="form-group">
+          <label class="form-label">RUC del Contribuyente</label>
+          <input type="text" id="modalRuc" class="form-input" placeholder="Ej: 1556843-2-543210" required>
+        </div>
+
+        <div class="form-grid-2">
+          <div class="form-group">
+            <label class="form-label">Número de Documento</label>
+            <input type="text" id="modalNumDoc" class="form-input" placeholder="Ej: PS-2026-98412" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Fecha de Validez</label>
+            <input type="date" id="modalFecha" class="form-input" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Número de Control</label>
+          <input type="text" id="modalNumControl" class="form-input" placeholder="Ej: CTRL-881920" required>
+        </div>
+
+        <button type="submit" class="btn-verify-submit" id="btnSubmitCert">
+          <i data-lucide="check-circle" style="width:18px; height:18px;"></i> Verificar Certificado
+        </button>
+      </form>
+
+      <!-- Resultado de la verificación -->
+      <div id="pazYSalvoResult" class="cert-result-card" style="display:none;"></div>
+    </div>
+  </div>
+
+  <!-- Script JS -->
+  <script src="script.js"></script>
+</body>
+</html>

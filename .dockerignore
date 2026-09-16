@@ -1,0 +1,9 @@
+node_modules
+.env
+.env.*
+.git
+.gitignore
+*.log
+test_*.js
+inspect_*.js
+get_wsdl.js
