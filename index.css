@@ -1012,15 +1012,264 @@ footer {
   gap: 16px;
 }
 
-/* ── RESPONSIVE ───────────────────────────────────────────── */
+/* ── SISTEMA DE DISEÑO RESPONSIVE Y ADAPTACIÓN MÓVIL ─────── */
+
+/* 1. Tablets y Pantallas Medianas (<= 768px) */
 @media (max-width: 768px) {
-  .hero-title { font-size: 2rem; }
-  .navbar-container { flex-direction: column; gap: 16px; text-align: center; }
-  .nav-links { display: none; }
-  .dv-banner { position: static; margin-bottom: 16px; width: 100%; }
-  .search-box { flex-direction: column; gap: 12px; }
-  .btn-search { width: 100%; justify-content: center; }
-  .form-grid-2 { grid-template-columns: 1fr; }
+  .navbar {
+    padding: 8px 16px;
+  }
+
+  .navbar-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .brand-logo img {
+    height: 65px;
+    margin: -10px 0;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .btn-contact {
+    padding: 8px 14px;
+    font-size: 0.82rem;
+  }
+
+  .hero-section {
+    margin: 24px auto 16px auto;
+    padding: 0 16px;
+  }
+
+  .hero-title {
+    font-size: 2.1rem;
+    line-height: 1.25;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+    margin-bottom: 24px;
+  }
+
+  .dgi-form-card {
+    padding: 20px 16px;
+    margin-bottom: 20px;
+  }
+
+  .lead-section {
+    margin: 40px auto;
+    padding: 0 16px;
+  }
+
+  .banners-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+}
+
+/* 2. Dispositivos Móviles (<= 640px) */
+@media (max-width: 640px) {
+  .hero-title {
+    font-size: 1.75rem;
+    letter-spacing: -0.01em;
+  }
+
+  .hero-badge {
+    font-size: 0.78rem;
+    padding: 6px 14px;
+  }
+
+  .hero-description {
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+
+  /* Formulario Desglosado DGI en Móvil */
+  .form-fields-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .form-fields-row .form-group,
+  .form-fields-row .flex-1 {
+    width: 100% !important;
+  }
+
+  .dgi-action-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .constructed-ruc-preview {
+    width: 100%;
+    justify-content: space-between;
+    padding: 10px 14px;
+  }
+
+  .btn-search-dgi {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 20px;
+    font-size: 1rem;
+  }
+
+  /* Tarjeta de Resultado */
+  .result-container {
+    padding: 0 14px;
+    margin: 20px auto;
+  }
+
+  .result-header {
+    padding: 20px 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .result-name {
+    font-size: 1.35rem;
+  }
+
+  .dv-banner {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 18px;
+    border-radius: var(--radius-md);
+  }
+
+  .dv-label {
+    font-size: 0.8rem;
+    text-align: left;
+  }
+
+  .dv-value {
+    font-size: 1.85rem;
+    line-height: 1;
+  }
+
+  .result-body {
+    padding: 20px 16px;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn-action {
+    width: 100%;
+    min-width: 100%;
+    justify-content: center;
+  }
+
+  /* Historial Reciente */
+  .recent-section {
+    padding: 0 16px;
+    margin: 16px auto 40px auto;
+  }
+
+  .recent-item {
+    padding: 12px 14px;
+    gap: 10px;
+  }
+
+  .recent-dv-badge {
+    min-width: 58px;
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+
+  /* Banners de Soluciones */
+  .banner-card {
+    padding: 22px 16px;
+  }
+
+  .banner-heading {
+    font-size: 1.2rem;
+  }
+
+  .banner-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Modal de Paz y Salvo */
+  .modal-overlay {
+    padding: 12px;
+  }
+
+  .modal-card {
+    padding: 24px 16px;
+    max-height: 92vh;
+    overflow-y: auto;
+  }
+
+  .form-grid-2 {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  /* Footer */
+  footer {
+    padding: 36px 16px 20px 16px;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+}
+
+/* 3. Teléfonos Pequeños (<= 400px) */
+@media (max-width: 400px) {
+  .hero-title {
+    font-size: 1.55rem;
+  }
+
+  .brand-logo img {
+    height: 52px;
+  }
+
+  .btn-contact span {
+    display: none;
+  }
+
+  .btn-contact {
+    padding: 8px 10px;
+  }
+
+  .btn-contact i {
+    width: 18px;
+    height: 18px;
+  }
+
+  .preview-val {
+    font-size: 0.95rem;
+  }
 }
 
 /* ── MODAL PAZ Y SALVO ────────────────────────────────────── */
