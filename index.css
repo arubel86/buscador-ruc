@@ -1034,9 +1034,9 @@ footer {
   }
 
   .brand-logo img {
-    height: 52px !important;
-    max-height: 52px !important;
-    margin: 0 !important;
+    height: 85px !important;
+    max-height: 85px !important;
+    margin: -16px 0 !important;
     object-fit: contain;
   }
 
@@ -1093,9 +1093,10 @@ footer {
   }
 
   .brand-logo img {
-    height: 46px !important;
-    max-height: 46px !important;
-    margin: 0 !important;
+    height: 75px !important;
+    max-height: 75px !important;
+    margin: -14px 0 !important;
+    object-fit: contain;
   }
 
   .btn-contact {
@@ -1348,7 +1349,10 @@ footer {
   }
 
   .brand-logo img {
-    height: 52px;
+    height: 68px !important;
+    max-height: 68px !important;
+    margin: -12px 0 !important;
+    object-fit: contain;
   }
 
   .btn-contact span {
