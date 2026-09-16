@@ -339,6 +339,18 @@ body {
   box-shadow: 0 0 0 3.5px rgba(56, 73, 200, 0.14);
 }
 
+.custom-select-trigger * {
+  pointer-events: none;
+}
+
+.custom-option * {
+  pointer-events: none;
+}
+
+.btn-search-dgi * {
+  pointer-events: none;
+}
+
 .trigger-content {
   display: flex;
   align-items: center;

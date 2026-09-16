@@ -211,6 +211,13 @@ document.addEventListener("click", (e) => {
   }
 });
 
+// Exponer globalmente para eventos inline
+window.toggleCustomSelect = toggleCustomSelect;
+window.closeCustomSelect = closeCustomSelect;
+window.selectCustomOption = selectCustomOption;
+window.actualizarCustomSelectUI = actualizarCustomSelectUI;
+window.ejecutarBusquedaDesglosadaDgi = ejecutarBusquedaDesglosadaDgi;
+
 function onDgiTipoChange() {
   const tipoSelect = document.getElementById("dgiTipoSelect");
   if (!tipoSelect) return;
