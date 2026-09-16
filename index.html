@@ -13,7 +13,7 @@
   
   <!-- Lucide Icons & CSS -->
   <script src="https://unpkg.com/lucide@latest"></script>
-  <link rel="stylesheet" href="index.css?v=3.5">
+  <link rel="stylesheet" href="index.css?v=3.6">
   <link rel="icon" type="image/svg+xml" href="assets/LOGOS PARA DIGITAL INDIVIDUALES-13.svg">
 </head>
 <body>
@@ -22,7 +22,7 @@
   <header class="navbar">
     <div class="navbar-container">
       <a href="#" class="brand-logo">
-        <img src="assets/LOGOS PARA DIGITAL INDIVIDUALES-07.svg?v=3.5" alt="Aizprua S.E. Logo" onerror="this.src='assets/LOGOS PARA DIGITAL INDIVIDUALES-21-nobg.svg'">
+        <img src="assets/LOGOS PARA DIGITAL INDIVIDUALES-07.svg?v=3.6" alt="Aizprua S.E. Logo" onerror="this.src='assets/LOGOS PARA DIGITAL INDIVIDUALES-21-nobg.svg'">
       </a>
 
       <ul class="nav-links">
@@ -63,11 +63,53 @@
         <!-- Campo: Tipo de Contribuyente -->
         <div class="form-group-full">
           <label class="form-label">Tipo de Contribuyente <span class="required-star">*</span></label>
-          <select id="dgiTipoSelect" class="form-select" onchange="onDgiTipoChange()">
-            <option value="JURIDICA" selected>JURÍDICA (Persona Jurídica / Empresa)</option>
-            <option value="NATURAL">NATURAL (Persona Natural / CÉDULA)</option>
-            <option value="NATURAL_NT">NATURAL NT (Persona Natural Extranjero NT)</option>
-          </select>
+          <div class="custom-select-wrapper" id="customTipoWrapper">
+            <button type="button" class="custom-select-trigger" id="customTipoTrigger" onclick="toggleCustomSelect(event)" aria-haspopup="listbox" aria-expanded="false">
+              <span class="trigger-content">
+                <i data-lucide="building-2" class="trigger-icon" id="customTipoIcon"></i>
+                <span id="customTipoLabel">JURÍDICA (Persona Jurídica / Empresa)</span>
+              </span>
+              <i data-lucide="chevron-down" class="trigger-arrow" id="customTipoArrow"></i>
+            </button>
+            <div class="custom-select-options" id="customTipoOptions" role="listbox">
+              <div class="custom-option selected" data-value="JURIDICA" onclick="selectCustomOption('JURIDICA')">
+                <div class="opt-left">
+                  <div class="opt-icon-box blue"><i data-lucide="building-2"></i></div>
+                  <div class="opt-info">
+                    <span class="opt-title">JURÍDICA (Persona Jurídica / Empresa)</span>
+                    <span class="opt-desc">Sociedades anónimas, fundaciones y empresas</span>
+                  </div>
+                </div>
+                <i data-lucide="check" class="opt-check"></i>
+              </div>
+              <div class="custom-option" data-value="NATURAL" onclick="selectCustomOption('NATURAL')">
+                <div class="opt-left">
+                  <div class="opt-icon-box orange"><i data-lucide="user"></i></div>
+                  <div class="opt-info">
+                    <span class="opt-title">NATURAL (Persona Natural / CÉDULA)</span>
+                    <span class="opt-desc">Panameños y residentes con cédula</span>
+                  </div>
+                </div>
+                <i data-lucide="check" class="opt-check"></i>
+              </div>
+              <div class="custom-option" data-value="NATURAL_NT" onclick="selectCustomOption('NATURAL_NT')">
+                <div class="opt-left">
+                  <div class="opt-icon-box purple"><i data-lucide="globe"></i></div>
+                  <div class="opt-info">
+                    <span class="opt-title">NATURAL NT (Persona Natural Extranjero NT)</span>
+                    <span class="opt-desc">Extranjeros con número tributario NT</span>
+                  </div>
+                </div>
+                <i data-lucide="check" class="opt-check"></i>
+              </div>
+            </div>
+            <!-- Select nativo sincronizado -->
+            <select id="dgiTipoSelect" style="display:none;" onchange="onDgiTipoChange()">
+              <option value="JURIDICA" selected>JURÍDICA (Persona Jurídica / Empresa)</option>
+              <option value="NATURAL">NATURAL (Persona Natural / CÉDULA)</option>
+              <option value="NATURAL_NT">NATURAL NT (Persona Natural Extranjero NT)</option>
+            </select>
+          </div>
         </div>
 
         <!-- Campos para JURIDICA (Rollo/Tomo, Folio/Imagen, Asiento/Ficha) -->

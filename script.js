@@ -136,12 +136,89 @@ function sincronizarFormularioConRuc(rucRaw) {
   onDgiTipoChange();
 }
 
+/* ── SELECTOR DESPLEGABLE PERSONALIZADO (CUSTOM SELECT) ───── */
+function toggleCustomSelect(e) {
+  if (e) e.stopPropagation();
+  const wrapper = document.getElementById("customTipoWrapper");
+  if (!wrapper) return;
+  wrapper.classList.toggle("open");
+  const trigger = document.getElementById("customTipoTrigger");
+  if (trigger) {
+    trigger.setAttribute("aria-expanded", wrapper.classList.contains("open") ? "true" : "false");
+  }
+}
+
+function closeCustomSelect() {
+  const wrapper = document.getElementById("customTipoWrapper");
+  if (wrapper) {
+    wrapper.classList.remove("open");
+    const trigger = document.getElementById("customTipoTrigger");
+    if (trigger) trigger.setAttribute("aria-expanded", "false");
+  }
+}
+
+function selectCustomOption(val) {
+  const tipoSelect = document.getElementById("dgiTipoSelect");
+  if (tipoSelect) {
+    tipoSelect.value = val;
+  }
+  actualizarCustomSelectUI(val);
+  onDgiTipoChange();
+  closeCustomSelect();
+}
+
+function actualizarCustomSelectUI(val) {
+  const labelEl = document.getElementById("customTipoLabel");
+  const iconEl = document.getElementById("customTipoIcon");
+  const options = document.querySelectorAll("#customTipoOptions .custom-option");
+
+  const config = {
+    JURIDICA: {
+      label: "JURÍDICA (Persona Jurídica / Empresa)",
+      icon: "building-2"
+    },
+    NATURAL: {
+      label: "NATURAL (Persona Natural / CÉDULA)",
+      icon: "user"
+    },
+    NATURAL_NT: {
+      label: "NATURAL NT (Persona Natural Extranjero NT)",
+      icon: "globe"
+    }
+  };
+
+  const selectedData = config[val] || config["JURIDICA"];
+  if (labelEl) labelEl.textContent = selectedData.label;
+  if (iconEl) {
+    iconEl.setAttribute("data-lucide", selectedData.icon);
+    if (typeof lucide !== "undefined") lucide.createIcons();
+  }
+
+  options.forEach(opt => {
+    if (opt.getAttribute("data-value") === val) {
+      opt.classList.add("selected");
+    } else {
+      opt.classList.remove("selected");
+    }
+  });
+}
+
+// Cerrar selector al hacer clic fuera
+document.addEventListener("click", (e) => {
+  const wrapper = document.getElementById("customTipoWrapper");
+  if (wrapper && !wrapper.contains(e.target)) {
+    closeCustomSelect();
+  }
+});
+
 function onDgiTipoChange() {
   const tipoSelect = document.getElementById("dgiTipoSelect");
   if (!tipoSelect) return;
 
   const tipo = tipoSelect.value;
   tipoContribuyenteActual = tipo;
+
+  actualizarCustomSelectUI(tipo);
 
   const groupJuridica = document.getElementById("groupJuridica");
   const groupNatural = document.getElementById("groupNatural");
