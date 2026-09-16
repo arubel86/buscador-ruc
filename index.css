@@ -113,10 +113,10 @@ body {
 }
 
 .brand-logo img {
-  height: 44px;
-  max-height: 44px;
+  height: 38px;
+  max-height: 38px;
   width: auto;
-  max-width: 220px;
+  max-width: 200px;
   object-fit: contain;
   display: block;
   margin: 0;
@@ -1036,8 +1036,8 @@ footer {
   }
 
   .brand-logo img {
-    height: 40px !important;
-    max-height: 40px !important;
+    height: 32px !important;
+    max-height: 32px !important;
     width: auto !important;
     margin: 0 !important;
     object-fit: contain;
@@ -1096,8 +1096,8 @@ footer {
   }
 
   .brand-logo img {
-    height: 38px !important;
-    max-height: 38px !important;
+    height: 28px !important;
+    max-height: 28px !important;
     width: auto !important;
     margin: 0 !important;
     object-fit: contain;
@@ -1353,8 +1353,8 @@ footer {
   }
 
   .brand-logo img {
-    height: 34px !important;
-    max-height: 34px !important;
+    height: 25px !important;
+    max-height: 25px !important;
     width: auto !important;
     margin: 0 !important;
     object-fit: contain;
