@@ -13,7 +13,7 @@
   
   <!-- Lucide Icons & CSS -->
   <script src="https://unpkg.com/lucide@latest"></script>
-  <link rel="stylesheet" href="index.css?v=4.0">
+  <link rel="stylesheet" href="index.css?v=4.2">
   <link rel="icon" type="image/svg+xml" href="assets/LOGOS PARA DIGITAL INDIVIDUALES-13.svg">
 </head>
 <body>
@@ -129,7 +129,7 @@
         </div>
 
         <!-- Campos para NATURAL (Provincia, Folio/Imagen, Asiento/Ficha) -->
-        <div id="groupNatural" class="form-fields-row" style="display:none;">
+        <div id="groupNatural" class="form-fields-row d-none" style="display:none !important;">
           <div class="form-group form-group-provincia">
             <label class="form-label">Provincia <span class="required-star">*</span></label>
             <select id="naturalProvincia" class="form-select" onchange="actualizarRucConstruido()">
@@ -161,7 +161,7 @@
         </div>
 
         <!-- Campos para NATURAL NT -->
-        <div id="groupNaturalNt" class="form-fields-row" style="display:none;">
+        <div id="groupNaturalNt" class="form-fields-row d-none" style="display:none !important;">
           <div class="form-group flex-1">
             <label class="form-label">Número de RUC / NT <span class="required-star">*</span></label>
             <input type="text" id="naturalNtRuc" class="form-control" placeholder="Ej: 8-NT-2-123456" oninput="actualizarRucConstruido()">
@@ -315,6 +315,6 @@
   </div>
 
   <!-- Script JS -->
-  <script src="script.js?v=4.0"></script>
+  <script src="script.js?v=4.2"></script>
 </body>
 </html>

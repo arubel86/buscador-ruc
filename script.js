@@ -232,9 +232,21 @@ function onDgiTipoChange() {
   const groupNatural = document.getElementById("groupNatural");
   const groupNaturalNt = document.getElementById("groupNaturalNt");
 
-  if (groupJuridica) groupJuridica.style.display = tipo === "JURIDICA" ? "flex" : "none";
-  if (groupNatural) groupNatural.style.display = tipo === "NATURAL" ? "flex" : "none";
-  if (groupNaturalNt) groupNaturalNt.style.display = tipo === "NATURAL_NT" ? "flex" : "none";
+  if (groupJuridica) {
+    const show = tipo === "JURIDICA";
+    groupJuridica.classList.toggle("d-none", !show);
+    groupJuridica.style.setProperty("display", show ? "flex" : "none", "important");
+  }
+  if (groupNatural) {
+    const show = tipo === "NATURAL";
+    groupNatural.classList.toggle("d-none", !show);
+    groupNatural.style.setProperty("display", show ? "flex" : "none", "important");
+  }
+  if (groupNaturalNt) {
+    const show = tipo === "NATURAL_NT";
+    groupNaturalNt.classList.toggle("d-none", !show);
+    groupNaturalNt.style.setProperty("display", show ? "flex" : "none", "important");
+  }
 
   actualizarRucConstruido();
 }

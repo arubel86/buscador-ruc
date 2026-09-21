@@ -61,6 +61,10 @@ button, input, select, textarea {
   font-family: inherit;
 }
 
+.d-none {
+  display: none !important;
+}
+
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   background: radial-gradient(circle at 10% 20%, rgba(56, 73, 200, 0.06) 0%, rgba(255, 138, 30, 0.04) 90%), var(--gray-50);
