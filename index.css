@@ -1407,11 +1407,15 @@ footer {
 
   /* Formulario Desglosado DGI en Móvil: Campos en bloque vertical */
   .form-fields-row {
-    display: flex !important;
     flex-direction: column !important;
     gap: 12px !important;
     width: 100% !important;
     box-sizing: border-box !important;
+  }
+
+  .form-fields-row[style*="display: none"],
+  .form-fields-row[style*="display:none"] {
+    display: none !important;
   }
 
   .form-fields-row .form-group,

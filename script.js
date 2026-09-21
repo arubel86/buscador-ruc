@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
   cargashistorialReciente();
   configurarPegadoInteligente();
   actualizarRucConstruido();
+  onDgiTipoChange();
 
   // Escuchar tecla Enter en cualquiera de los campos del formulario DGI
   const inputs = document.querySelectorAll(".form-control, .form-select");
