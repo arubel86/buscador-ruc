@@ -306,6 +306,8 @@ async function ejecutarBusqueda(queryText) {
   }
 
   isSearching = true;
+  const topLoadingBar = document.getElementById("topLoadingBar");
+  if (topLoadingBar) topLoadingBar.classList.add("active");
   if (searchBtn) {
     searchBtn.disabled = true;
     searchBtn.style.opacity = "0.7";
@@ -326,6 +328,9 @@ async function ejecutarBusqueda(queryText) {
           <div class="spinner-center-glow"></div>
         </div>
         <h3 id="loadingStepTitle" class="loading-step-title">Conectando con los servidores del e-Tax 2.0 DGI Panamá...</h3>
+        <div class="card-loading-track">
+          <div class="card-loading-bar"></div>
+        </div>
         <p id="loadingStepSubtitle" class="loading-step-subtitle" style="margin-bottom:0;">Verificando RUC o Cédula (${escapeHtml(labelTipo)}) en vivo...</p>
       </div>
     `;
@@ -350,6 +355,8 @@ async function ejecutarBusqueda(queryText) {
   }, 850);
 
   const resetSearchBtn = () => {
+    const topLoadingBar = document.getElementById("topLoadingBar");
+    if (topLoadingBar) topLoadingBar.classList.remove("active");
     isSearching = false;
     if (searchBtn) {
       searchBtn.disabled = false;
