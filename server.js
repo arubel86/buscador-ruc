@@ -8,6 +8,15 @@ const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
+
+// Middleware para atrapar JSON malformado y evitar caídas del servidor
+app.use((err, req, res, next) => {
+  if (err instanceof SyntaxError && err.status === 400 && "body" in err) {
+    return res.status(400).json({ error: "Solicitud con formato JSON inválido" });
+  }
+  next(err);
+});
+
 app.use(express.static(path.join(__dirname)));
 
 // CREDENCIALES OFICIALES DE THE FACTORY HKA PANAMÁ (Se configuran en el archivo .env)
